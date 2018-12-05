@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <!-- 数据库JDBC驱动的jar包地址 -->
+  <classPathEntry    location="C:/Users/54192/.m2/repository/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar"/>
+  <context id="context1" >
+    <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.40.14:3306/gateway" userId="root" password="123456" />-->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.40.14:3306/daji" userId="root" password="123456" />
+
+    <!--配置model层包名和路径-->
+    <javaModelGenerator targetPackage="com.wuxin.tong.dao.entity"
+                        targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" >
+      <property name="enableSubPackages" value="true"/>
+    </javaModelGenerator>
+
+    <!--配置dao层包名和路径-->
+    <sqlMapGenerator targetPackage="com.wuxin.tong.dao.xml" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" >
+      <property name="enableSubPackages" value="true"/>
+      <property name="trimStrings" value="true" />
+    </sqlMapGenerator>
+
+    <!--配置mapper层包名和路径-->
+    <javaClientGenerator targetPackage="com.wuxin.tong.dao.mapper" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" type="XMLMAPPER" >
+      <property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+
+    <!--配置需要映射的表名-->
+    <!--<table schema="daji" tableName="daji_ex_invoke_log" domainObjectName="DajiExInvokeLog"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="gateway" tableName="app_info" domainObjectName="AppInfo"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="daji" tableName="daji_dict" domainObjectName="DajiDict"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="gateway" tableName="request_inter_access" domainObjectName="RequestInterAccess"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="analyzeroc" tableName="statistics_interfacecode_timeconsume_all" domainObjectName="StatisticsInterfacecodeTimeconsumeAll"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="analyzeroc" tableName="secret_log" domainObjectName="SecretLog"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="clean" tableName="data_day_statistic_info" domainObjectName="DataDayStatisticInfo"-->
+           <!--enableCountByExample="false"-->
+           <!--enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false"-->
+           <!--enableSelectByExample="false"-->
+           <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="clean" tableName="data_total_statistic_info" domainObjectName="DataTotalStatisticInfo"-->
+           <!--enableCountByExample="false"-->
+           <!--enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false"-->
+           <!--enableSelectByExample="false"-->
+           <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="clean" tableName="standard_total_statistic_info" domainObjectName="StandardTotalStatisticInfo"-->
+           <!--enableCountByExample="false"-->
+           <!--enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false"-->
+           <!--enableSelectByExample="false"-->
+           <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <!--<table schema="clean" tableName="table_standard_statistic_info" domainObjectName="TableStandardStatisticInfo"-->
+           <!--enableCountByExample="false"-->
+           <!--enableUpdateByExample="false"-->
+           <!--enableDeleteByExample="false"-->
+           <!--enableSelectByExample="false"-->
+           <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+    <table schema="daji" tableName="daji_instantcall_limit" domainObjectName="DajiInstantcallLimit"
+           enableCountByExample="false"
+           enableUpdateByExample="false"
+           enableDeleteByExample="false"
+           enableSelectByExample="false"
+           selectByExampleQueryId="false"
+    ></table>
+    <!--<table schema="analyzeroc" tableName="daji_matter_interface_invoke_detail" domainObjectName="DajiMatterInterfaceInvokeDetail"-->
+    <!--enableCountByExample="false"-->
+    <!--enableUpdateByExample="false"-->
+    <!--enableDeleteByExample="false"-->
+    <!--enableSelectByExample="false"-->
+    <!--selectByExampleQueryId="false"-->
+    <!--&gt;</table>-->
+  </context>
+</generatorConfiguration>
