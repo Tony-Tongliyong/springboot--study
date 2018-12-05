@@ -4,8 +4,7 @@
   <!-- 数据库JDBC驱动的jar包地址 -->
   <classPathEntry    location="C:/Users/54192/.m2/repository/mysql/mysql-connector-java/5.1.33/mysql-connector-java-5.1.33.jar"/>
   <context id="context1" >
-    <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.40.14:3306/gateway" userId="root" password="123456" />-->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.40.14:3306/daji" userId="root" password="123456" />
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/daji" userId="root" password="root" />
 
     <!--配置model层包名和路径-->
     <javaModelGenerator targetPackage="com.wuxin.tong.dao.entity"
@@ -14,13 +13,13 @@
     </javaModelGenerator>
 
     <!--配置dao层包名和路径-->
-    <sqlMapGenerator targetPackage="com.wuxin.tong.dao.xml" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" >
+    <sqlMapGenerator targetPackage="com.wuxin.tong.dao.xml.primary" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" >
       <property name="enableSubPackages" value="true"/>
       <property name="trimStrings" value="true" />
     </sqlMapGenerator>
 
     <!--配置mapper层包名和路径-->
-    <javaClientGenerator targetPackage="com.wuxin.tong.dao.mapper" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" type="XMLMAPPER" >
+    <javaClientGenerator targetPackage="com.wuxin.tong.dao.mapper.primary" targetProject="C:/Users/54192/IdeaProjects/tong/tong-dao/src/main/java" type="XMLMAPPER" >
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
 

@@ -8,6 +8,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,8 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+
+import static com.wuxin.tong.SecondaryDataSourceConfig.BASE_PACKAGE;
 
 /**
  * @author: tongly
@@ -24,15 +27,17 @@ import javax.sql.DataSource;
  * @desc:
  */
 @Configuration
-
-@MapperScan(basePackages = SecondaryDataSourceConfig.BASE_PACKAGE,sqlSessionFactoryRef = "secondarySqlSessionFactory",sqlSessionTemplateRef  = "secondarySqlSessionTemplate")
-
+@MapperScan(sqlSessionFactoryRef = "secondarySqlSessionFactory",basePackages = BASE_PACKAGE,sqlSessionTemplateRef  = "secondarySqlSessionTemplate")
 public class SecondaryDataSourceConfig {
 
     private static final Logger log = LoggerFactory.getLogger(SecondaryDataSourceConfig.class);
 
-    static final String BASE_PACKAGE = "com.wuxin.tong.dao.mapper.secondary";
-    private static final String MAPPER_LOCATION_SECONDARY ="classpath*:com/wuxin/tong/dao/xml/secondary/*Mapper.xml" ;
+    static final String BASE_PACKAGE = "com.wuxin.tong.dao.mapper.secondary" ;
+
+    @Value("${mybatis.secondary.mapper-locations}")
+    private static String MAPPER_LOCATION_SECONDARY = "classpath:com/wuxin/tong/dao/xml/secondary/*.xml"  ;
+
+
 
     @Bean(name = "secondaryDataSource")
     @ConfigurationProperties(prefix="spring.datasource.secondary")

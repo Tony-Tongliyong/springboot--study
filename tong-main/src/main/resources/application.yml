@@ -7,20 +7,25 @@ spring:
   datasource:
      primary:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://192.168.40.14:3306/clean
+        url: jdbc:mysql://localhost:3306/clean
         username: root
-        password: 123456
+        password: root
         driver-class-name: com.mysql.jdbc.Driver
      secondary:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://192.168.40.14:3306/daji
+        url: jdbc:mysql://localhost.14:3306/daji
         username: root
-        password: 123456
+        password: root
         driver-class-name: com.mysql.jdbc.Driver
 
 mybatis:
-  mapper-locations: com/wuxin/tong/dao/xml/*/*.xml
-  type-aliases-package: com.wuxin.tong.dao
+  primary:
+       mapper-locations: classpath:com/wuxin/tong/dao/xml/primary/*.xml
+       type-aliases-package: com.wuxin.tong.dao.mapper.primary
+  secondary:
+       apper-locations: classpath:com/wuxin/tong/dao/xml/secondary/*.xml
+       type-aliases-package: com.wuxin.tong.dao.mapper.secondary
+
 
 #日志配置
 logging:

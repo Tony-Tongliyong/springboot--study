@@ -22,6 +22,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
+import static com.wuxin.tong.PrimaryDataSourceConfig.BASE_PACKAGE;
+
 /**
  * @author: tongly
  * @contact:wuxin@yscredit.com
@@ -30,13 +32,15 @@ import javax.sql.DataSource;
  * @desc:
  */
 @Configuration
-@MapperScan(basePackages = PrimaryDataSourceConfig.BASE_PACKAGE,sqlSessionFactoryRef = "primarySqlSessionFactory",sqlSessionTemplateRef  = "primarySqlSessionTemplate")
+@MapperScan(basePackages = BASE_PACKAGE ,sqlSessionFactoryRef = "primarySqlSessionFactory",sqlSessionTemplateRef  = "primarySqlSessionTemplate")
 
 public class PrimaryDataSourceConfig {
 
     private static final Logger log = LoggerFactory.getLogger(PrimaryDataSourceConfig.class);
 
+
     static final String BASE_PACKAGE = "com.wuxin.tong.dao.mapper.primary";
+
     private static String MAPPER_LOCATION_PRIMARY = "classpath:com/wuxin/tong/dao/xml/primary/*.xml" ;
 
     @Primary
