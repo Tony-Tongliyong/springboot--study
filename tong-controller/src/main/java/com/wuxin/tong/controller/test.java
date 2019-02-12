@@ -3,9 +3,9 @@ package com.wuxin.tong.controller;
 
 import com.wuxin.tong.service.service.TableStatisticStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author: tongly
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @time: 2018/11/27 15:49
  * @desc:
  */
-@RestController
+@Controller
 @RequestMapping("/test")
 public class test {
 
@@ -23,7 +23,7 @@ public class test {
     @RequestMapping("/test")
     @ResponseBody
     public String test(){
-        return "hello world";
+        return "test";
     }
 
     @RequestMapping("/status")

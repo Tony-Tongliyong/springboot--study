@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 8087
+  port: 8086
 
 #数据库配置
 spring:
@@ -13,19 +13,24 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
      secondary:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost.14:3306/daji
+        url: jdbc:mysql://localhost:3306/daji
         username: root
         password: root
         driver-class-name: com.mysql.jdbc.Driver
+#     odps:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url:
+#        accessId:
+#        accessKeySecret:
+#        driver-class-name:
 
 mybatis:
   primary:
        mapper-locations: classpath:com/wuxin/tong/dao/xml/primary/*.xml
        type-aliases-package: com.wuxin.tong.dao.mapper.primary
   secondary:
-       apper-locations: classpath:com/wuxin/tong/dao/xml/secondary/*.xml
+       mapper-locations: classpath:com/wuxin/tong/dao/xml/secondary/*.xml
        type-aliases-package: com.wuxin.tong.dao.mapper.secondary
-
 
 #日志配置
 logging:
@@ -39,4 +44,22 @@ hbase:
    zookeeper:
       quorum: namenode
       port: 2181
+#oozie
+oozie:
+   url: http://192.168.121.35:11000/oozie
+   appPath: XXX
+   nameNode: XXX
+   inputDir: XXX
+   outputDir: XXX
+   queueName: default
+   userName: XXX
+
+
+   
+
+
+
+
+
+
 

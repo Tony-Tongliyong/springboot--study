@@ -8,7 +8,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,11 +32,7 @@ public class SecondaryDataSourceConfig {
     private static final Logger log = LoggerFactory.getLogger(SecondaryDataSourceConfig.class);
 
     static final String BASE_PACKAGE = "com.wuxin.tong.dao.mapper.secondary" ;
-
-    @Value("${mybatis.secondary.mapper-locations}")
     private static String MAPPER_LOCATION_SECONDARY = "classpath:com/wuxin/tong/dao/xml/secondary/*.xml"  ;
-
-
 
     @Bean(name = "secondaryDataSource")
     @ConfigurationProperties(prefix="spring.datasource.secondary")

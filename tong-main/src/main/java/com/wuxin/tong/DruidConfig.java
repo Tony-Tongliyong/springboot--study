@@ -1,6 +1,5 @@
 package com.wuxin.tong;
 
-import com.alibaba.druid.spring.boot.autoconfigure.DruidStatProperties;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.slf4j.Logger;
@@ -55,6 +54,5 @@ public class DruidConfig {
         filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return filterRegistrationBean;
     }
-
 
 }
